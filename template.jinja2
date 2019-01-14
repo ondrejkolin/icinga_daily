@@ -1,0 +1,6 @@
+Icinga report from {{datetime.strftime("%d. %b %Y %H:%M:%S")}}
+
+{% for hostname in hosts %}{{hostname}}
+  {% for service in hosts[hostname]%}{{ service["name"]}} ({{service["system_id"]}}) - {{service["stdout"]}}
+  {% endfor %}
+{% endfor %}
